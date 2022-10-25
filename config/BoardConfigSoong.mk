@@ -32,6 +32,7 @@ SOONG_CONFIG_derpGlobalVars += \
     additional_gralloc_10_usage_bits \
     camera_override_format_from_reserved \
     gralloc_handle_has_custom_content_md_reserved_size \
+    disable_postrender_cleanup \
     gralloc_handle_has_reserved_size \
     gralloc_handle_has_ubwcp_format \
     target_health_charging_control_charging_path \
@@ -105,6 +106,7 @@ TARGET_TRUST_USB_CONTROL_ENABLE ?= 1
 TARGET_TRUST_USB_CONTROL_DISABLE ?= 0
 
 # Soong value variables
+SOONG_CONFIG_derpGlobalVars_disable_postrender_cleanup := $(TARGET_DISABLE_POSTRENDER_CLEANUP)
 SOONG_CONFIG_derpGlobalVars_aapt_version_code := $(shell date -u +%Y%m%d)
 SOONG_CONFIG_derpGlobalVars_additional_gralloc_10_usage_bits := $(TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS)
 SOONG_CONFIG_derpGlobalVars_target_health_charging_control_charging_path := $(TARGET_HEALTH_CHARGING_CONTROL_CHARGING_PATH)
