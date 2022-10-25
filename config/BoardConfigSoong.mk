@@ -28,6 +28,7 @@ SOONG_CONFIG_lineageGlobalVars += \
     target_power_libperfmgr_mode_extension_lib \
     sdmcore_has_is_display_hw_available_func \
     gralloc_handle_has_custom_content_md_reserved_size \
+    disable_postrender_cleanup \
     gralloc_handle_has_reserved_size \
     gralloc_handle_has_ubwcp_format \
     target_surfaceflinger_udfps_lib \
@@ -73,6 +74,7 @@ TARGET_TRUST_USB_CONTROL_ENABLE ?= 1
 TARGET_TRUST_USB_CONTROL_DISABLE ?= 0
 
 # Soong value variables
+SOONG_CONFIG_lineageGlobalVars_disable_postrender_cleanup := $(TARGET_DISABLE_POSTRENDER_CLEANUP)
 SOONG_CONFIG_lineageGlobalVars_camera_skip_kind_check := $(CAMERA_SKIP_KIND_CHECK)
 SOONG_CONFIG_lineageGlobalVars_target_camera_package_name := $(TARGET_CAMERA_PACKAGE_NAME)
 SOONG_CONFIG_lineageGlobalVars_aapt_version_code := $(shell date -u +%Y%m%d)
