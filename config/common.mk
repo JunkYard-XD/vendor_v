@@ -85,13 +85,29 @@ SYSTEM_OPTIMIZE_JAVA ?= true
 SYSTEMUI_OPTIMIZE_JAVA ?= true
 
 # Product overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay
+PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay/frameworks
+PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay/packages
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay/frameworks
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay/packages
+PRODUCT_PACKAGES += \
+    CertifiedPropsOverlay \
+    FrameworksOverlay \
+    SettingsOverlay \
+    SettingsProviderOverlay \
+    SystemUIOverlay
 ifneq ($(TARGET_BUILD_GAPPS),true)
-PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay-vanilla
+PRODUCT_PACKAGES += \
+    DialerOverlayVanilla \
+    FrameworksOverlayVanilla \
+    LatinIMEOverlayVanilla \
+    OpenDeltaOverlayVanilla \
+    SettingsProviderOverlayVanilla \
+    ThemePickerOverlayVanilla
 # Include LatinIME dictionaries
 PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay-vanilla/dictionaries
+PRODUCT_PACKAGE_OVERLAYS += vendor/yaap/overlay-vanilla/packages
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay-vanilla/dictionaries
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += vendor/yaap/overlay-vanilla/packages
 endif
 PRODUCT_COPY_FILES += \
     vendor/yaap/overlay/partition_order.xml:$(TARGET_COPY_OUT_PRODUCT)/overlay/partition_order.xml

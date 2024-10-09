@@ -34,6 +34,7 @@ PRODUCT_PACKAGES += \
 # YAAP packages
 PRODUCT_PACKAGES += \
     Aperture \
+    AvatarPicker \
     ExactCalculator \
     Glimpse \
     MatLog \
@@ -45,8 +46,7 @@ PRODUCT_PACKAGES += \
     OmniJaws \
     OpenDelta \
     Ripple \
-    Panic \
-    BatteryStatsViewer
+    Panic
 
 # TextClassifier
 PRODUCT_PACKAGES += \
